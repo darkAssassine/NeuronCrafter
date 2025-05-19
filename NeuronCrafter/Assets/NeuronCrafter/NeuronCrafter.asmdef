@@ -1,0 +1,23 @@
+{
+    "name": "NeuronCrafter",
+    "rootNamespace": "NeuronCrafter",
+    "references": [
+        "GUID:570803c3cc5791246b0b06da6bf2ddd8"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [
+        "Switch",
+        "PS4",
+        "PS5",
+        "GameCoreXboxOne",
+        "XboxOne",
+        "GameCoreScarlett"
+    ],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
