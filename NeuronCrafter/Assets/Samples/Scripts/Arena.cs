@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace NeuronCrafter.Example
+namespace NeuronCrafter.Sample
 {
     public class Arena : MonoBehaviour
     {

@@ -41,7 +41,7 @@ namespace NeuronCrafter.NeuralNetwork
                 BestTrainingResult[_result.Type] = _result;
                 Debug.Log($"Best of {_result.Type} was {BestTrainingResult[_result.Type].Name}: {BestTrainingResult[_result.Type].FitnessValue}");
             }
-           
+
         }
 
         public static NeuralNetworkSaveData GetTheBestOfType(string _type)
@@ -72,7 +72,8 @@ namespace NeuronCrafter.NeuralNetwork
 
         private void Save(NeuralNetworkSaveData _neuralNetworkSaveData)
         {
-            string directoryPath = Application.persistentDataPath + "/" + _neuralNetworkSaveData.Type + "/";
+#if UNITY_EDITOR
+            string directoryPath = Application.streamingAssetsPath + "/" + "NeuralNetworkSaveFiles" + "/" + _neuralNetworkSaveData.Type + "/";
             string fullpath = directoryPath + _neuralNetworkSaveData.Type + "Best" + ".nn_save";
 
             if (Directory.Exists(directoryPath) == false)
@@ -81,5 +82,6 @@ namespace NeuronCrafter.NeuralNetwork
             }
             SaveSystem.SaveSystem.Save(fullpath, _neuralNetworkSaveData);
         }
+#endif
     }
 }

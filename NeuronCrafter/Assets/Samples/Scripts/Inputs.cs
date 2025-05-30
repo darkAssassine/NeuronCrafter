@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace NeuronCrafter.Example
+namespace NeuronCrafter.Sample
 {
     public class Inputs : MonoBehaviour
     {

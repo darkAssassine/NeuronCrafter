@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace NeuronCrafter.Example
+namespace NeuronCrafter.Sample
 {
     public class SimpleAIController : MonoBehaviour
     {
@@ -51,7 +51,7 @@ namespace NeuronCrafter.Example
             Vector2 direction = new Vector2(pickUp.position.x - transform.position.x, pickUp.position.z - transform.position.z);
             direction = direction.normalized * 30;
 
-            float[] inputs = {direction.x, direction.y };
+            float[] inputs = { direction.x, direction.y };
             float[] output = agent.Run(inputs);
 
             float x = 0;

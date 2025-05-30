@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8091115701471033826}
   - component: {fileID: 981795899156167443}
   - component: {fileID: 396920146925603406}
+  - component: {fileID: 584240553846379695}
   - component: {fileID: 6470316853594190300}
   m_Layer: 0
   m_Name: SimpleAI
@@ -129,7 +130,7 @@ MonoBehaviour:
   rb: {fileID: 6470316853594190300}
   speed: 10
   TrainIntervalInSeconds: 10
-  FittnesEarningPerPickUp: 50
+  FittnesEarningPerPickUp: 10
   FittnesEarningForMoving: 1
   FittnesLosePerSecond: 5
   FittnesPerWalkingTowards: 2
@@ -147,31 +148,106 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: ExampleAI
   uniqueName: Agent_1
+  trainer: {fileID: 584240553846379695}
   inputCount: 2
   layersConfig:
   - ActivationFunction: 0
     NeuronCount: 4
-  trainingMethod: 1
+  initializeMethod: 0
+  weightsRange: 1
+  biasRange: 1
+  alphaRange: 1
+--- !u!114 &584240553846379695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554140167122227463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03c259043f1f9d4e9053530c8a1b404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainingMethod: 0
+  thresholdToUseBest: 200
   DisableConnectionMuationChancePerTraining: 0
   AddNeuronMuationChancePerTraining: 0
   EnableDisabledConnnectionChangerPerTraining: 0
-  fitnessToStepSize:
+  fitnessToWeightValue:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.1
-      inSlope: -0.00007
-      outSlope: -0.00007
+      value: 1
+      inSlope: -0.0019972692
+      outSlope: -0.0019972692
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 485.2703
+      value: 0.030784547
+      inSlope: -0.00003105378
+      outSlope: -0.00003105378
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.15531862
+    - serializedVersion: 3
+      time: 1000
+      value: 0
+      inSlope: -0.000059807207
+      outSlope: -0.000059807207
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  fitnessToBiasValue:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.001
+      outSlope: -0.001
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1000
-      value: 0.03
-      inSlope: -0.00007
-      outSlope: -0.00007
+      value: 0
+      inSlope: -0.001
+      outSlope: -0.001
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  fitnessToAplhaValue:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.001
+      outSlope: -0.001
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1000
+      value: 0
+      inSlope: -0.001
+      outSlope: -0.001
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334

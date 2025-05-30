@@ -1,6 +1,6 @@
 {
     "name": "Example",
-    "rootNamespace": "NeuronCrafter",
+    "rootNamespace": "NeuronCrafter.Sample",
     "references": [
         "GUID:66c69e326e7285548a93c8f92bc244d9",
         "GUID:75469ad4d38634e559750d17036d5f7c"
